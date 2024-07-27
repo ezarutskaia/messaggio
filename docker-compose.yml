@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # Go    
+  golang:
+    container_name: service_1
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/go/src
+    ports:
+      - '6050:6030'
+    command: tail -F anything      
+
+  # PostgreSQL container
+  sql:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: public
+    ports:
+      - '5432:5432'
