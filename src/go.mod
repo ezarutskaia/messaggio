@@ -3,6 +3,7 @@ module src
 go 1.22.3
 
 require (
+	github.com/confluentinc/confluent-kafka-go v1.9.2
 	gorm.io/driver/postgres v1.5.9
 	gorm.io/gorm v1.25.11
 )
