@@ -21,9 +21,3 @@ func Engine() **gorm.DB {
     }
 	return &db
 }
-
-func main() {
-	DataBase := *Engine()
-
-	DataBase.AutoMigrate(&Messages{})
-}

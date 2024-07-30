@@ -10,7 +10,8 @@ services:
       - ./src:/go/src
     ports:
       - '6050:6030'
-    command: go run main.go | go run consumer.go
+    command: "go run main.go"
+
 
   # PostgreSQL container
   sql:

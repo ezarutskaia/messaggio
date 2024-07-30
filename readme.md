@@ -1,12 +1,10 @@
-## Create topic in kafka
-kafka-topics --create --topic messages --partitions 1 --replication-factor 1 --bootstrap-server kafka:9092
+## Установка
+git clone https://github.com/ezarutskaia/messaggio
 
-## 
-kafka-log-dirs --describe --bootstrap-server kafka:9092
+docker compose build
 
-kafka-topics --bootstrap-server kafka:9092 --topic messages --describe
+docker compose up -d
 
+docker exec -ti service_1 go run automigrate.go
 
-kafka-console-producer --bootstrap-server kafka:9092 --topic messages
-kafka-console-consumer --bootstrap-server kafka:9092 --topic messages
-kafka-topics --list --bootstrap-server kafka:9092
+docker exec -ti service_1 go run consumer.go
