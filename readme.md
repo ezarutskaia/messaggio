@@ -14,11 +14,14 @@ docker exec -ti service_1 go run automigrate.go
 docker exec -ti service_1 go run consumer.go
 
 ## Консольные команды для выполнения запросов к Api
-
+```
 curl --location 'f8ba8ca4d3f8.vps.myjino.ru/message' \
 --header 'Content-Type: application/json' \
 --data '{
     "message": "test"
 }'
+```
 
+```
 curl --location 'f8ba8ca4d3f8.vps.myjino.ru/statistic'
+```
